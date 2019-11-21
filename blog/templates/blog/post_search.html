@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1>Search Results</h1>
+        {% for post in posts %}
+            <div class="post-entry">
+                <h2><a href="{% url 'post-detail' post.pk post.slug %}">{{ post.title }}</a></h2>
+                <p>{{ post.body|truncatewords_html:50|safe }}</p>
+            </div>
+        {% empty %}
+            <p>Search returned no results.</p>
+        {% endfor %}
+{% endblock content %}
