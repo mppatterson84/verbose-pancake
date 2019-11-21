@@ -10,11 +10,46 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Mike Patterson -
+    
+        {% if title and post.title %}
+            {{ title }} post: {{ post.title }}
+        {% elif title %}
+            {{ title }}
+        {% elif post.title %}
+            {{ post.title }}
+        {% endif %}
+    
+    </title>
 </head>
 
 <body>
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'home' %}">Mike Patterson</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item  m-auto {{ home_active }}">
+                    <a class="nav-link" href="{{ home_active_link|default:'/' }}">Home {{ home_active_sr|safe }}</a>
+                </li>
+                <li class="nav-item  m-auto {{ about_active }}">
+                    <a class="nav-link" href="{{ about_active_link|default:'about' }}">About {{ About_active_sr|safe }}</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    {% block content %}
+
     <h1>Hello, world!</h1>
+        
+    {% endblock content %}
+        
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
