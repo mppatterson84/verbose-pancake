@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # 3rd Party
+    'ckeditor',
+
     # Local
     'pages.apps.PagesConfig',
     'blog.apps.BlogConfig',
@@ -134,6 +137,33 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+CKEDITOR_BASE_PATH = "ckeditor/ckeditor/"
+CKEDITOR_CONFIGS = {
+    'default': {
+        'skin': 'moonocolor',
+        'extraPlugins': ['codesnippet', 'autogrow',],
+        'codeSnippet_theme': 'dark',
+        'autoGrow_onStartup': True,
+        'autoGrow_minHeight': '300',
+        'width': '100%',
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Source',],
+            ['Cut', 'Copy', 'Paste', '-', 'Undo', 'Redo'],
+            ['Find', 'Replace', '-', 'SelectAll', '-', 'Scayt'],
+            ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv'],
+            ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl'],
+            ['Link', 'Unlink'],
+            ['Image', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar'],
+            ['Styles', 'Format', 'Font', 'FontSize'],
+            ['TextColor', 'BGColor'],
+            ['Maximize', 'ShowBlocks'],
+            ['CodeSnippet'],
+        ],
+    }
+}
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())

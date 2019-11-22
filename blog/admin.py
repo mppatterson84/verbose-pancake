@@ -1,14 +1,13 @@
 from .models import Post
 from django import forms
 from django.contrib import admin
-# from ckeditor.widgets import CKEditorWidget
+from ckeditor.widgets import CKEditorWidget
 
 class PostAdminForm(forms.ModelForm):
     body = forms.CharField(
         label='Post Body',
         required=True,
-        widget=forms.Textarea()
-        # widget=CKEditorWidget()
+        widget=CKEditorWidget()
     )
     class Meta:
         model = Post

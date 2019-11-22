@@ -11,6 +11,7 @@ psycopg2 = "*"
 django-heroku = "*"
 gunicorn = "*"
 whitenoise = "*"
+django-ckeditor = "*"
 
 [requires]
 python_version = "3.7"

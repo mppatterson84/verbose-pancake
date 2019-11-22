@@ -23,6 +23,8 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="shortcut icon" type="image/png" href="{% static 'images/m_p_favicon.ico' %}">
+
+    <link rel="stylesheet" href="{% static 'ckeditor/ckeditor/plugins/codesnippet/lib/highlight/styles/docco.css' %}">
     
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
@@ -37,6 +39,9 @@
         {% endif %}
     
     </title>
+    <script>window.CKEDITOR_BASEPATH = "{% static 'ckeditor/ckeditor/' %}";</script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
 </head>
 
 <body>
@@ -64,9 +69,11 @@
                 <li class="nav-item m-auto {{ all_active }}">
                     <a class="nav-link" href="{{ all_active_link|default:'/blog/all/' }}">All Posts {{ all_active_sr|safe }}</a>
                 </li>
+                {% if user.is_authenticated %}
                 <li class="nav-item m-auto {{ new_active }}">
                     <a class="nav-link" href="{{ new_active_link|default:'/blog/new/' }}">New Post {{ new_active_sr|safe }}</a>
                 </li>
+                {% endif %}
             </ul>
             <div class="ml-4">
                 <!-- Search Form -->
@@ -103,6 +110,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <!-- highlight.js -->
+    <script src="{% static 'ckeditor/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js' %}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- base.js -->
     <script src="{% static 'js/base.js' %}"></script>
 </body>
 
