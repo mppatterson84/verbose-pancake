@@ -6,6 +6,11 @@ body{
     background-color: #000;
 }
 
+nav{
+    z-index: 1;
+    position: relative;
+}
+
 #landing-header {
     z-index: 1;
     position: relative;
