@@ -10,6 +10,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(default=datetime.now, blank=False)
     updated_at = models.DateTimeField(default=datetime.now, blank=False)
     slug = models.SlugField(unique=False, blank=True, default='slug')
+    published = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title

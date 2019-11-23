@@ -3,6 +3,9 @@
 
 {% block content %}
 
+    {% if post.published == False %}
+    <h4 class="bg-warning p-1">This post is not published.</h4>
+    {% endif %}    
     <h1>{{ post.title }}</h1>
     <p>{{ post.body|safe }}</p>
     <p>Author: {{ post.author }}</p>

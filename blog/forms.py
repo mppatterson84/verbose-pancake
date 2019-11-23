@@ -19,10 +19,17 @@ class PostForm(forms.ModelForm):
         required=True,
         widget=CKEditorWidget()
     )
+
+    published = forms.CharField(
+        label='Published',
+        required=False,
+        widget=forms.CheckboxInput()
+    )
     
     class Meta:
         model = Post
         fields = [
             'title',
             'body',
+            'published',
         ]

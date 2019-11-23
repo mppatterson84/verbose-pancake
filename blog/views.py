@@ -13,6 +13,14 @@ class PostListView(ListView):
     paginate_by = 10
     ordering = ['-pk']
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        if self.request.user.is_authenticated and queryset.filter(author=self.request.user):
+            queryset = queryset
+        else:
+            queryset = queryset.filter(published=True)
+        return queryset
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Blog'
@@ -66,22 +74,31 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
         context['title'] = 'Delete'
         return context
 
-def post_search_view(request):
-    queryset_list = Post.objects.all()
-    query = request.GET.get('q')
-    if query:
-        queryset_list = queryset_list.filter(
-                Q(title__icontains=query) |
-                Q(body__icontains=query) 
-                ).distinct()
-    else:
-        queryset_list = None
-    posts = queryset_list
-    context = {
-        'title': 'Search Posts',
-        'posts': posts,
-    }
-    return render(request, 'blog/post_search.html', context)
+class PostSearchView(ListView):
+    model = Post
+    template_name = 'blog/post_search.html'
+    ordering = ['pk']
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Search Results'
+        return context
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        query = self.request.GET.get('q')
+        if query:
+            queryset = queryset.filter(
+                    Q(title__icontains=query) |
+                    Q(body__icontains=query) 
+                    ).distinct()
+            if self.request.user.is_authenticated and queryset.filter(author=self.request.user):
+                queryset = queryset
+            else:
+                queryset = queryset.filter(published=True)
+        else:
+            queryset = None
+        return queryset
 
 class PostListAllView(ListView):
     model = Post
@@ -95,3 +112,11 @@ class PostListAllView(ListView):
         context['all_active_link'] = '#'
         context['all_active_sr'] = '<span class="sr-only">(current)</span>'
         return context
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        if self.request.user.is_authenticated and queryset.filter(author=self.request.user):
+            queryset = queryset
+        else:
+            queryset = queryset.filter(published=True)
+        return queryset
