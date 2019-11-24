@@ -144,7 +144,7 @@ CKEDITOR_CONFIGS = {
     'default': {
         'skin': 'moonocolor',
         'extraPlugins': ['codesnippet', 'autogrow',],
-        'codeSnippet_theme': 'dark',
+        'codeSnippet_theme': 'docco',
         'autoGrow_onStartup': True,
         'autoGrow_minHeight': '300',
         'width': '100%',
