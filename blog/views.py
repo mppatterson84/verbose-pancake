@@ -71,6 +71,14 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
         context['title'] = 'Edit'
         return context
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        if self.request.user.is_authenticated and queryset.filter(author=self.request.user):
+            queryset = queryset
+        else:
+            queryset = queryset.filter(published=True)
+        return queryset
+
 class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Post
     template_name = 'blog/post_delete.html'
@@ -81,6 +89,14 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Delete'
         return context
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        if self.request.user.is_authenticated and queryset.filter(author=self.request.user):
+            queryset = queryset
+        else:
+            queryset = queryset.filter(published=True)
+        return queryset
 
 class PostSearchView(ListView):
     model = Post
