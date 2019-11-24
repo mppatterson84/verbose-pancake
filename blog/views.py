@@ -33,6 +33,14 @@ class PostDetailView(DetailView):
     model = Post
     template_name = 'blog/post_detail.html'
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        if self.request.user.is_authenticated and queryset.filter(author=self.request.user):
+            queryset = queryset
+        else:
+            queryset = queryset.filter(published=True)
+        return queryset
+
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     template_name = 'blog/post_new.html'
