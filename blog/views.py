@@ -82,7 +82,7 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
 class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Post
     template_name = 'blog/post_delete.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('blog')
     login_url = '/admin/'
 
     def get_context_data(self, **kwargs):
