@@ -12,11 +12,11 @@
     <p>Created at: {{ post.created_at }}</p>
 
     
-    {% if post.catagories.all %}
+    {% if post.categories.all %}
         
-    <p>Catagories: 
+    <p>Categories: 
         
-        {% for category in post.catagories.all %}
+        {% for category in post.categories.all %}
 
             {{ category }}{% if not forloop.last %}, {% endif %}
                 

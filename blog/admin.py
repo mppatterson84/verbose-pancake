@@ -19,7 +19,7 @@ class PostAdminForm(forms.ModelForm):
             'updated_at',
             'slug',
             'published',
-            'catagories',
+            'categories',
         ]
 
 class PostAdmin(admin.ModelAdmin):

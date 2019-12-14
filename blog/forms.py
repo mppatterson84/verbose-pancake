@@ -26,7 +26,7 @@ class PostForm(forms.ModelForm):
         widget=forms.CheckboxInput()
     )
 
-    catagories = forms.ModelMultipleChoiceField(
+    categories = forms.ModelMultipleChoiceField(
         widget=forms.CheckboxSelectMultiple,
         queryset=PostCategory.objects.all(),
         required=False
@@ -38,5 +38,5 @@ class PostForm(forms.ModelForm):
             'title',
             'body',
             'published',
-            'catagories',
+            'categories',
         ]

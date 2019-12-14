@@ -11,7 +11,7 @@ class Post(models.Model):
     updated_at = models.DateTimeField(default=datetime.now, blank=False)
     slug = models.SlugField(unique=False, blank=True, default='slug')
     published = models.BooleanField(default=False)
-    catagories = models.ManyToManyField('blog.PostCategory')
+    categories = models.ManyToManyField('blog.PostCategory')
 
     def __str__(self):
         return self.title
@@ -32,4 +32,4 @@ class PostCategory(models.Model):
         return self.category_name
 
     class Meta:
-        verbose_name_plural = "Post Catagories"
+        verbose_name_plural = "Post Categories"
