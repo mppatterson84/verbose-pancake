@@ -16,9 +16,9 @@
         
     <p>Catagories: 
         
-        {% for catagory in post.catagories.all %}
+        {% for category in post.catagories.all %}
 
-            {{ catagory }}{% if not forloop.last %}, {% endif %}
+            {{ category }}{% if not forloop.last %}, {% endif %}
                 
         {% endfor %}
             

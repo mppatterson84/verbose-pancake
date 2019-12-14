@@ -1,4 +1,4 @@
-from .models import Post, PostCatagory
+from .models import Post, PostCategory
 from django import forms
 from django.contrib import admin
 from ckeditor.widgets import CKEditorWidget
@@ -26,17 +26,17 @@ class PostAdmin(admin.ModelAdmin):
     form = PostAdminForm
     readonly_fields = ('updated_at', 'slug')
 
-class PostCatagoryAdminForm(forms.ModelForm):
-    catagory_name = forms.CharField()
+class PostCategoryAdminForm(forms.ModelForm):
+    category_name = forms.CharField()
 
     class Meta:
-        model = PostCatagory
+        model = PostCategory
         fields = [
-            'catagory_name',
+            'category_name',
         ]
 
-class PostCatagoryAdmin(admin.ModelAdmin):
-    form = PostCatagoryAdminForm
+class PostCategoryAdmin(admin.ModelAdmin):
+    form = PostCategoryAdminForm
 
 admin.site.register(Post, PostAdmin)
-admin.site.register(PostCatagory, PostCatagoryAdmin)
+admin.site.register(PostCategory, PostCategoryAdmin)

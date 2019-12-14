@@ -1,5 +1,5 @@
 from django import forms
-from blog.models import Post, PostCatagory
+from blog.models import Post, PostCategory
 from ckeditor.widgets import CKEditorWidget
 
 class PostForm(forms.ModelForm):
@@ -28,7 +28,7 @@ class PostForm(forms.ModelForm):
 
     catagories = forms.ModelMultipleChoiceField(
         widget=forms.CheckboxSelectMultiple,
-        queryset=PostCatagory.objects.all(),
+        queryset=PostCategory.objects.all(),
         required=False
     )
     
