@@ -1,5 +1,5 @@
 from django import forms
-from blog.models import Post
+from blog.models import Post, PostCatagory
 from ckeditor.widgets import CKEditorWidget
 
 class PostForm(forms.ModelForm):
@@ -25,6 +25,12 @@ class PostForm(forms.ModelForm):
         required=False,
         widget=forms.CheckboxInput()
     )
+
+    catagories = forms.ModelMultipleChoiceField(
+        widget=forms.CheckboxSelectMultiple,
+        queryset=PostCatagory.objects.all(),
+        required=False
+    )
     
     class Meta:
         model = Post
@@ -32,4 +38,5 @@ class PostForm(forms.ModelForm):
             'title',
             'body',
             'published',
+            'catagories',
         ]

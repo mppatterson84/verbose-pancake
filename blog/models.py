@@ -11,6 +11,7 @@ class Post(models.Model):
     updated_at = models.DateTimeField(default=datetime.now, blank=False)
     slug = models.SlugField(unique=False, blank=True, default='slug')
     published = models.BooleanField(default=False)
+    catagories = models.ManyToManyField('blog.PostCatagory')
 
     def __str__(self):
         return self.title
@@ -23,3 +24,12 @@ class Post(models.Model):
     def get_absolute_url(self):
         from django.urls import reverse
         return reverse('post-detail', kwargs={'pk': self.pk, 'slug': self.slug})
+
+class PostCatagory(models.Model):
+    catagory_name = models.CharField(max_length=70, unique=True)
+
+    def __str__(self):
+        return self.catagory_name
+
+    class Meta:
+        verbose_name_plural = "Post Catagories"

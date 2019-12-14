@@ -10,7 +10,22 @@
     <p>{{ post.body|safe }}</p>
     <p>Author: {{ post.author }}</p>
     <p>Created at: {{ post.created_at }}</p>
+
     
+    {% if post.catagories.all %}
+        
+    <p>Catagories: 
+        
+        {% for catagory in post.catagories.all %}
+
+            {{ catagory }}{% if not forloop.last %}, {% endif %}
+                
+        {% endfor %}
+            
+    </p>
+
+    {% endif %}
+
     {% if post.created_at|date:"M:d:Y" == post.updated_at|date:"M:d:Y" and post.created_at|time:"H:i" != post.updated_at|time:"H:i" %}
         <p>Updated at: {{ post.updated_at }}</p>
     {% elif post.created_at|date:"M:d:Y" != post.updated_at|date:"M:d:Y" %}
