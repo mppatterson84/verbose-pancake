@@ -30,5 +30,5 @@ A list of Django Apps which I've built include:
   * The ability to select whether to publish a post or not. If unpublished the post will not be visible to anyone except the author.
     Also, a banner will display at the top of the post which clearly informs the author that the post is not published.
   * A post will display a "Created at" date and time as well as an "Updated at" date and time. 
-    The "Updated at:" text will not be displayed when the post is created. Only when the post has actually been later updated 
+    The "Updated at:" text will not be displayed when the post is created. Only when the post has been later updated 
     will it display "Updated at:" with it's respective date and time.
