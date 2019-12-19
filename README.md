@@ -32,3 +32,5 @@ A list of Django Apps which I've built include:
   * A post will display a "Created at" date and time as well as an "Updated at" date and time. 
     The "Updated at:" text will not be displayed when the post is created. Only when the post has been later updated 
     will it display "Updated at:" with it's respective date and time.
+  * The ability to create post categories and tag a post with any number of categories. Post categories are created with their own
+    model and linked to the post model with a many-to-many field.
