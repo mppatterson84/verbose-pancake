@@ -57,38 +57,46 @@
         </button>
     
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item  m-auto {{ home_active }}">
+            <ul class="navbar-nav mr-auto text-center">
+                <li class="nav-item {{ home_active }}">
                     <a class="nav-link" href="{{ home_active_link|default:'/' }}">Home {{ home_active_sr|safe }}</a>
                 </li>
-                <li class="nav-item  m-auto {{ about_active }}">
+                <li class="nav-item {{ about_active }}">
                     <a class="nav-link" href="{{ about_active_link|default:'/about/' }}">About {{ About_active_sr|safe }}</a>
                 </li>
-                <li class="nav-item  m-auto {{ contact_active }}">
+                <li class="nav-item {{ contact_active }}">
                     <a class="nav-link" href="{{ contact_active_link|default:'/contact/' }}">Contact {{ Contact_active_sr|safe }}</a>
                 </li>
                 {% if user.is_authenticated %}
-                <li class="nav-item m-auto px-2">&VerticalBar;</li>
-                <li class="nav-item m-auto">
-                    <a class="nav-link" href="{% url 'todo:lists' %}">Todo Lists</a>
-                </li>
-                <li class="nav-item m-auto">
-                    <a class="nav-link" href="{% url 'todo:mine' %}">My Tasks</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        To-Do
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'todo:lists' %}">Todo Lists</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'todo:mine' %}">My Tasks</a>
+                    </div>
                 </li>
                 {% endif %}
             </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item  m-auto {{ blog_active }}">
-                    <a class="nav-link" href="{{ blog_active_link|default:'/blog/' }}">Blog {{ blog_active_sr|safe }}</a>
+            <ul class="navbar-nav ml-auto text-center">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Blog
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'blog' %}">Blog Home {{ blog_active_sr|safe }}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'post-list-all' %}">All Posts {{ all_active_sr|safe }}</a>
+                        {% if user.is_authenticated %}
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'post-new' %}">New Post {{ new_active_sr|safe }}</a>
+                        {% endif %}
+                    </div>
                 </li>
-                <li class="nav-item m-auto {{ all_active }}">
-                    <a class="nav-link" href="{{ all_active_link|default:'/blog/all/' }}">All Posts {{ all_active_sr|safe }}</a>
-                </li>
-                {% if user.is_authenticated %}
-                <li class="nav-item m-auto {{ new_active }}">
-                    <a class="nav-link" href="{{ new_active_link|default:'/blog/new/' }}">New Post {{ new_active_sr|safe }}</a>
-                </li>
-                {% endif %}
             </ul>
             <div class="ml-4">
                 <!-- Search Form -->
