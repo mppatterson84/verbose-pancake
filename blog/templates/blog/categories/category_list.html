@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1>Blog - Categories</h1>
+
+    <form method="GET" action="/blog/categories/filter/">
+        
+        <div class="post-entry">
+        {% for category in object_list %}
+        
+            <input class="btn btn-info" type="submit" name="category" value="{{ category.category_name }}"> 
+                   
+        {% endfor %}
+        </div>
+
+    </form>
+    
+{% endblock content %}

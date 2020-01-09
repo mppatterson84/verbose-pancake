@@ -1,6 +1,6 @@
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Post
+from .models import Post, PostCategory
 from blog.forms import PostForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
@@ -143,4 +143,43 @@ class PostListAllView(ListView):
             queryset = queryset
         else:
             queryset = queryset.filter(published=True)
+        return queryset
+
+class CategoryListView(ListView):
+    model = PostCategory
+    template_name = 'blog/categories/category_list.html'
+    ordering = ['pk']
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Blog - Categories'
+        context['blog_active'] = 'active'
+        context['blog_active_link'] = '#'
+        context['blog_active_sr'] = '<span class="sr-only">(current)</span>'
+        return context
+
+class CategoryFilterView(ListView):
+    model = Post
+    template_name = 'blog/categories/category_filter.html'
+    ordering = ['pk']
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Blog - Post By Category'
+        context['blog_active'] = 'active'
+        context['blog_active_link'] = '#'
+        context['blog_active_sr'] = '<span class="sr-only">(current)</span>'
+        return context
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        query = self.request.GET.get('category')
+        if query:
+            queryset = queryset.filter(categories__category_name=query).distinct()
+            if self.request.user.is_authenticated and queryset.filter(author=self.request.user):
+                queryset = queryset
+            else:
+                queryset = queryset.filter(published=True)
+        else:
+            queryset = None
         return queryset
