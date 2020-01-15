@@ -3,6 +3,9 @@
 
 {% block content %}
     <h1>Search Results</h1>
+    <a class="btn btn-primary" href="{% url 'blog' %}">Blog</a>
+    <a class="btn btn-primary" href="{% url 'category-list' %}">Categories</a>
+
         {% for post in object_list %}
             <div class="post-entry">
                 {% if post.published == False %}
@@ -12,6 +15,6 @@
                 <p>{{ post.body|truncatewords_html:50|safe }}</p>
             </div>
         {% empty %}
-            <p>Search returned no results.</p>
+            <p class="mt-5">Search returned no results.</p>
         {% endfor %}
 {% endblock content %}

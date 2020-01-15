@@ -153,23 +153,15 @@ class CategoryListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Blog - Categories'
-        context['blog_active'] = 'active'
-        context['blog_active_link'] = '#'
-        context['blog_active_sr'] = '<span class="sr-only">(current)</span>'
+        context['category_active'] = 'active'
+        context['category_active_link'] = '#'
+        context['category_active_sr'] = '<span class="sr-only">(current)</span>'
         return context
 
 class CategoryFilterView(ListView):
     model = Post
     template_name = 'blog/categories/category_filter.html'
     ordering = ['pk']
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['title'] = 'Blog - Post By Category'
-        context['blog_active'] = 'active'
-        context['blog_active_link'] = '#'
-        context['blog_active_sr'] = '<span class="sr-only">(current)</span>'
-        return context
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -183,3 +175,37 @@ class CategoryFilterView(ListView):
         else:
             queryset = None
         return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = self.request.GET.get('category')
+        context['category_filter_active'] = 'active'
+        context['category_filter_active_link'] = '#'
+        context['category_filter_active_sr'] = '<span class="sr-only">(current)</span>'
+        return context
+
+class CategoryCreateView(LoginRequiredMixin, CreateView):
+    model = PostCategory
+    template_name = 'blog/categories/category_new.html'
+    login_url = '/admin/'
+    success_url = reverse_lazy('category-list')
+    fields = ('category_name',)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'New Category'
+        context['new_active'] = 'active'
+        context['new_active_link'] = '#'
+        context['new_active_sr'] = '<span class="sr-only">(current)</span>'
+        return context
+
+class CategoryDeleteView(LoginRequiredMixin, DeleteView):
+    model = PostCategory
+    template_name = 'blog/categories/category_delete.html'
+    success_url = reverse_lazy('category-list')
+    login_url = '/admin/'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Delete'
+        return context
