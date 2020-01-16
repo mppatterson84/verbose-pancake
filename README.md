@@ -19,9 +19,8 @@ A list of technologies used include:
 A list of Django Apps which I've built include:
 
 * A pages app to simply display static pages.
-* A sendemail app which allows a user to send contact emails to me which are delivered via SendGrid. 
-  I've also included the functionality to collect the email address, email subject, and email body from the form submission
-  and store it all in the database.
+* A sendemail app that allows a user to send contact emails to me which are delivered via SendGrid. 
+  I've also included the functionality to collect the email address, email subject, email body, and created at date and time. When the form is submitted, the email is sent and all the information is saved to the database.
 * A blog app which features include:
 
   * User-end templates for creating, updating, and deleting posts.
