@@ -1,7 +1,7 @@
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Post, PostCategory
-from blog.forms import PostForm
+from blog.forms import PostForm, PostCategoryForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.shortcuts import render
@@ -189,7 +189,7 @@ class CategoryCreateView(LoginRequiredMixin, CreateView):
     template_name = 'blog/categories/category_new.html'
     login_url = '/admin/'
     success_url = reverse_lazy('category-list')
-    fields = ('category_name',)
+    form_class = PostCategoryForm
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

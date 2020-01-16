@@ -40,3 +40,21 @@ class PostForm(forms.ModelForm):
             'published',
             'categories',
         ]
+
+class PostCategoryForm(forms.ModelForm):
+    category_name = forms.CharField(
+        label='',
+        required=True,
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Category Name",
+                "class": "form-control",
+            }
+        )
+    )
+
+    class Meta:
+        model = PostCategory
+        fields = [
+            'category_name',
+        ]
