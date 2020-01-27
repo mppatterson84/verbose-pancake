@@ -14,6 +14,7 @@ A list of technologies used include:
 * Set environment variables via an .env file to protect sensitive information.
 * Use of template variables via view context to display unique information within a visited page.
 
+The settings.py file has been split up and built into a settings package.
 
 A list of Django Apps which I've built include:
 
