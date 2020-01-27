@@ -26,7 +26,9 @@
 
     <link rel="stylesheet" href="{% static 'ckeditor/ckeditor/plugins/codesnippet/lib/highlight/styles/docco.css' %}">
     
+    {% block css_file %}
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% endblock css_file %}
 
     <title>Mike Patterson -
     
@@ -47,6 +49,7 @@
 
 <body>
 
+    {% block navbar %}
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <a class="navbar-brand" href="{% url 'home' %}">Mike Patterson</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -97,6 +100,7 @@
             </div>
         </div>
     </nav>
+    {% endblock navbar %}
     
     <main class="container">
 
@@ -123,8 +127,6 @@
     <!-- highlight.js -->
     <script src="{% static 'ckeditor/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js' %}"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <!-- django-todo extra js -->
-    {% block extra_js %}{% endblock extra_js %}
     <!-- base.js -->
     <script src="{% static 'js/base.js' %}"></script>
 </body>
