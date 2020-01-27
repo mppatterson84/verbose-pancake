@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     # 3rd Party
     'ckeditor',
     'django_bleach',
-    'todo',
 
     # Local
     'pages.apps.PagesConfig',
@@ -176,8 +175,6 @@ EMAIL_HOST_PASSWORD = os.environ['EMAIL_PASSWORD']
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-
-SITE_ID = 1
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())

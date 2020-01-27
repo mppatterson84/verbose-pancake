@@ -10,7 +10,6 @@ A list of technologies used include:
 * CKEditor for rich text editing in blog posts.
 * highlight.js for displaying synax highlighted code snippets in blog posts.
 * Bootstrap 4.
-* django-todo app for bug tracking, project management, and personal to-dos.
 * SendGrid for receiving contact emails.
 * Set environment variables via an .env file to protect sensitive information.
 * Use of template variables via view context to display unique information within a visited page.

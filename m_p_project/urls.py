@@ -21,5 +21,4 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('', include('blog.urls')),
     path('', include('sendemail.urls')),
-    path('todo/', include('todo.urls', namespace="todo")),
 ]
