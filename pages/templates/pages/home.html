@@ -12,10 +12,21 @@
 {% endblock navbar %}
 
 
+{% block main_container %}
+<main>
+{% endblock main_container %}
+
+
 {% block content %}
 <div class="home-container">
     <div>
         <h1>Hello, World!</h1>
+        <a href="#more" class="btn btn-primary btn-lg m-3">Find Out More</a>
+    </div>
+</div>
+<div class="home-container" id="more">
+    <div>
+        <h1>Hello, Again!</h1>
         <a href="{% url 'about' %}" class="btn btn-primary btn-lg m-3">Find Out More</a>
     </div>
 </div>
