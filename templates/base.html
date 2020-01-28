@@ -129,8 +129,9 @@
     <!-- highlight.js -->
     <script src="{% static 'ckeditor/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js' %}"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <!-- base.js -->
+    {% block js_file %}
     <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+    {% endblock js_file %}
 </body>
 
 </html>

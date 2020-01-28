@@ -5,6 +5,7 @@ body{
     /* background-color: slategrey; */
     background-image: url("https://images.unsplash.com/photo-1532939198640-a7f0da02b62f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1834&q=80");
     background-attachment: fixed;
+    background-position-y: 0;
 }
 div.home-container{
     height: 100vh;
