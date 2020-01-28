@@ -1,6 +1,9 @@
 body{
     background-color: rgba(135, 206, 250, 0.4);
 }
+nav.navbar{
+    height: 7vh;
+}
 main{
     background-color: rgb(235, 245, 255);
     padding: 1em;

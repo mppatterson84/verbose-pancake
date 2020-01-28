@@ -8,7 +8,7 @@
 
 
 {% block navbar %}
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 {% endblock navbar %}
 
 
@@ -25,6 +25,12 @@
     </div>
 </div>
 <div class="home-container" id="more">
+    <div>
+        <h1>Hello, There!</h1>
+        <a href="#even-more" class="btn btn-primary btn-lg m-3">Find Out More</a>
+    </div>
+</div>
+<div class="home-container" id="even-more">
     <div>
         <h1>Hello, Again!</h1>
         <a href="{% url 'about' %}" class="btn btn-primary btn-lg m-3">Find Out More</a>

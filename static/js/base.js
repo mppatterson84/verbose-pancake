@@ -18,11 +18,11 @@ function pageValues() {
 }
 
 window.addEventListener("load", function () {
-    progress[0].style.backgroundPositionY = `-${pageValues().scrollPosition * 3}px`;
-    progress[1].style.backgroundPositionY = `-${pageValues().scrollPosition * 3 + 500}px`;
+    progress[0].style.backgroundPositionY = `-${pageValues().scrollPosition * 5}px`;
+    progress[2].style.backgroundPositionY = `-${pageValues().scrollPosition * 5 + 313}px`;
 });
 
 window.addEventListener("scroll", function () {
-    progress[0].style.backgroundPositionY = `-${pageValues().scrollPosition * 3}px`;
-    progress[1].style.backgroundPositionY = `-${pageValues().scrollPosition * 3 + 500}px`;
+    progress[0].style.backgroundPositionY = `-${pageValues().scrollPosition * 5}px`;
+    progress[2].style.backgroundPositionY = `-${pageValues().scrollPosition * 5 + 313}px`;
 });
