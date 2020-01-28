@@ -19,10 +19,10 @@ function pageValues() {
 
 window.addEventListener("load", function () {
     progress[0].style.backgroundPositionY = `-${pageValues().scrollPosition * 4}px`;
-    progress[2].style.backgroundPositionY = `-${pageValues().scrollPosition * 4 + 315}px`;
+    progress[2].style.backgroundPositionY = `-${pageValues().scrollPosition * 4 + 515}px`;
 });
 
 window.addEventListener("scroll", function () {
     progress[0].style.backgroundPositionY = `-${pageValues().scrollPosition * 4}px`;
-    progress[2].style.backgroundPositionY = `-${pageValues().scrollPosition * 4 + 315}px`;
+    progress[2].style.backgroundPositionY = `-${pageValues().scrollPosition * 4 + 515}px`;
 });
