@@ -2,7 +2,9 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    background-color: slategrey;
+    /* background-color: slategrey; */
+    background-image: url("https://images.unsplash.com/photo-1532939198640-a7f0da02b62f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1834&q=80");
+    background-attachment: fixed;
 }
 div.home-container{
     height: 100vh;
@@ -14,11 +16,10 @@ div.home-container:nth-of-type(1){
     background-image: url("https://images.unsplash.com/photo-1548704686-f0a484c1bd67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80");
     background-attachment: fixed;
 }
-div.home-container:nth-of-type(2){
+/* div.home-container:nth-of-type(2){
     background-image: url("https://images.unsplash.com/photo-1532939198640-a7f0da02b62f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1834&q=80");
-    background-attachment: fixed;
-    
-}
+    background-attachment: fixed; 
+} */
 div.home-container:nth-of-type(3){
     background-image: url("https://images.unsplash.com/photo-1542752787-2aed8c063c8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=603&q=80");
     background-attachment: fixed;
@@ -45,6 +46,9 @@ div.home-container div h1{
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+    body{
+        background-size: 168%;
+    }
     div.home-container{
         background-size: 168%;
     }
@@ -52,6 +56,9 @@ div.home-container div h1{
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+    body{
+        background-size: 100%;
+    }
     div.home-container{
         background-size: 100%;
     }
