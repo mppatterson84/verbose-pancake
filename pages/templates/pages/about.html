@@ -1,10 +1,29 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
+<div class="about-container">
     <h1>About</h1>
-    <p>Hi, my name is Mike.</p>
-    <p>You can find me on <a href="https://www.linkedin.com/in/mike-patterson-a2a5a68a/" target="_blank">Linkedin</a>.</p>
-    <p>Visit my <a href="https://github.com/mppatterson84" target="_blank">Github</a> profile.</p>
-    <p><a href="mailto:mike@michael-patterson.com">mike@michael-patterson.com</a></p>
+    <div class="row">
+        <div class="col-lg-6">
+            <p>Hi, my name is Mike.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Veniam quos, accusantium itaque assumenda nisi laboriosam. 
+                Voluptate earum deleniti perspiciatis magni illum numquam ullam veritatis impedit!
+            </p>
+            <p>You can find me on <a href="https://www.linkedin.com/in/mike-patterson-a2a5a68a/" target="_blank">Linkedin</a>.</p>
+            <p>Visit my <a href="https://github.com/mppatterson84" target="_blank">Github</a> profile.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Explicabo similique impedit, odio excepturi est placeat obcaecati minus iure nobis, quam quis provident. 
+                Dolore nam quam sunt possimus doloremque pariatur tempore consectetur nemo! Autem, earum nemo.
+            </p>
+        </div>
+        <div class="col-lg-6 text-center p-3">
+            <div>
+                <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">Give Me A Shout</a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
     

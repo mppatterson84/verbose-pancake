@@ -3,29 +3,20 @@
 
 
 {% block css_file %}
-<link rel="stylesheet" href="{% static 'css/splash.css' %}">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock css_file %}
 
 
 {% block navbar %}
-<nav class="navbar navbar-expand-md fixed-top navbar-dark">
-    <a class="navbar-brand" href="{% url 'blog' %}">Mike Patterson</a>
-</nav>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 {% endblock navbar %}
 
 
 {% block content %}
-<div id="landing-header">
-    <h1>Welcome</h1>
-    <p>Look at the pretty pictures then...</p>
-    <a href="{% url 'blog' %}" id="btn1" class="btn btn-lg btn-primary">Continue on</a>
+<div class="home-container">
+    <div>
+        <h1>Hello, World!</h1>
+        <a href="{% url 'about' %}" class="btn btn-primary btn-lg m-3">Find Out More</a>
+    </div>
 </div>
-
-<ul class="slideshow">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
 {% endblock content %}
