@@ -18,11 +18,13 @@ function pageValues() {
 }
 
 window.addEventListener("load", function () {
-    progress[0].style.backgroundPositionY = `-${pageValues().scrollPosition * 4}px`;
-    progress[2].style.backgroundPositionY = `-${pageValues().scrollPosition * 4 + 515}px`;
+    progress[0].style.backgroundPositionY = `-${pageValues().scrollPosition * 3}px`;
+    progress[1].style.backgroundPositionY = `${pageValues().scrollPosition * 3 - 200}px`;
+    progress[2].style.backgroundPositionY = `-${pageValues().scrollPosition * 3 - 150}px`;
 });
 
 window.addEventListener("scroll", function () {
-    progress[0].style.backgroundPositionY = `-${pageValues().scrollPosition * 4}px`;
-    progress[2].style.backgroundPositionY = `-${pageValues().scrollPosition * 4 + 515}px`;
+    progress[0].style.backgroundPositionY = `-${pageValues().scrollPosition * 3}px`;
+    progress[1].style.backgroundPositionY = `${pageValues().scrollPosition * 3 - 200}px`;
+    progress[2].style.backgroundPositionY = `-${pageValues().scrollPosition * 3 - 150}px`;
 });

@@ -12,15 +12,12 @@ div.home-container{
 }
 div.home-container:nth-of-type(1){
     background-image: url("https://images.unsplash.com/photo-1548704686-f0a484c1bd67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80");
-    background-attachment: fixed;
 }
 div.home-container:nth-of-type(2){
-    background-image: url("https://images.unsplash.com/photo-1532939198640-a7f0da02b62f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1834&q=80");
-    background-attachment: fixed; 
+    background-image: url("https://images.unsplash.com/photo-1445916999081-eee032425401?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
 }
 div.home-container:nth-of-type(3){
     background-image: url("https://images.unsplash.com/photo-1542752787-2aed8c063c8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=603&q=80");
-    background-attachment: fixed;
 }
 div.home-container div{
     margin: auto;
@@ -33,13 +30,16 @@ div.home-container:nth-of-type(1) div{
 }
 div.home-container div h1{
     background-image: radial-gradient(
-        rgba(211, 211, 211, 0.6), 
         rgba(211, 211, 211, 0.4), 
         rgba(211, 211, 211, 0.2), 
-        rgba(211, 211, 211, 0.1)
+        rgba(211, 211, 211, 0.050), 
+        rgba(150, 150, 150, 0.025)
     );
-    padding: .5em;
-    border-radius: 15px;
+    padding: 0.3em;
+    border-radius: 30px;
+}
+div.home-container:nth-of-type(3) div h1{
+    color: rgba(255, 255, 255, 0.75);
 }
 
 /* Extra small devices (phones, 600px and down) */
