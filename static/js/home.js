@@ -1,6 +1,5 @@
 console.log("Hello, World! home.js");
 
-// const body = document.querySelector("body");
 const progress = document.querySelectorAll("div.home-container");
 
 function pageValues() {
@@ -19,13 +18,11 @@ function pageValues() {
 }
 
 window.addEventListener("load", function () {
-    // body.style.backgroundPositionY = 0;
-    progress[0].style.backgroundPositionY = `-${pageValues().scrollPosition * 5}px`;
-    progress[2].style.backgroundPositionY = `-${pageValues().scrollPosition * 5 + 550}px`;
+    progress[0].style.backgroundPositionY = `-${pageValues().scrollPosition * 4}px`;
+    progress[2].style.backgroundPositionY = `-${pageValues().scrollPosition * 4 + 315}px`;
 });
 
 window.addEventListener("scroll", function () {
-    // body.style.backgroundPositionY = 0;
-    progress[0].style.backgroundPositionY = `-${pageValues().scrollPosition * 5}px`;
-    progress[2].style.backgroundPositionY = `-${pageValues().scrollPosition * 5 + 550}px`;
+    progress[0].style.backgroundPositionY = `-${pageValues().scrollPosition * 4}px`;
+    progress[2].style.backgroundPositionY = `-${pageValues().scrollPosition * 4 + 315}px`;
 });
