@@ -28,3 +28,8 @@ window.addEventListener("scroll", function () {
     progress[1].style.backgroundPositionY = `${pageValues().scrollPosition * 3 - 200}px`;
     progress[2].style.backgroundPositionY = `-${pageValues().scrollPosition * 3 - 150}px`;
 });
+
+
+var defaultDuration = 999 // ms
+var edgeOffset = 0 // px
+zenscroll.setup(defaultDuration, edgeOffset)
