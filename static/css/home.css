@@ -21,25 +21,19 @@ div.home-container:nth-of-type(3){
 }
 div.home-container div{
     margin: auto;
-    padding: 0;
+    padding: 1em;
     grid-row: 2;
     text-align: center;
+    border-radius: 15px;
+    max-width: 550px;
+    font-size: x-large;
 }
 div.home-container:nth-of-type(1) div{
     margin-top: 0;
 }
-div.home-container div h1{
-    background-image: radial-gradient(
-        rgba(211, 211, 211, 0.4), 
-        rgba(211, 211, 211, 0.2), 
-        rgba(211, 211, 211, 0.050), 
-        rgba(150, 150, 150, 0.025)
-    );
-    padding: 0.3em;
-    border-radius: 30px;
-}
-div.home-container:nth-of-type(3) div h1{
-    color: rgba(255, 255, 255, 0.75);
+div.home-container div p, div.home-container div h1{
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
 }
 
 /* Extra small devices (phones, 600px and down) */
