@@ -21,6 +21,11 @@ window.addEventListener("load", function () {
     progress[0].style.backgroundPositionY = `-${pageValues().scrollPosition * 3}px`;
     progress[1].style.backgroundPositionY = `${pageValues().scrollPosition * 3 - 200}px`;
     progress[2].style.backgroundPositionY = `-${pageValues().scrollPosition * 3 - 150}px`;
+
+    function scrollTo(hash) {
+        location.hash = "#" + hash;
+    }
+    scrollTo("home");
 });
 
 window.addEventListener("scroll", function () {
