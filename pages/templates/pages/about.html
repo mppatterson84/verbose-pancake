@@ -2,11 +2,11 @@
 {% load static %}
 
 
-{% block css_file %}
+{% block head_links %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
 <link rel="stylesheet" href="{% static 'css/base.css' %}">
 <link rel="stylesheet" href="{% static 'css/about.css' %}">
-{% endblock css_file %}
+{% endblock head_links %}
 
 
 {% block content %}
@@ -20,45 +20,31 @@
             </div>
             <p>
                 Hello, World! My name is Mike. 
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Est a cumque voluptatibus! Fugit, dolorem vel?
+                I am a full stack web developer.
+            </p>
+            <p>
+                My main focus is frontend development with HTML, CSS, and Javascript 
+                and backend development with Python, Django, and PostgreSQL.
+            </p>
+            <p>
+                My approch to programming comes from a curiosity for technology 
+                and a drive for creativity.
             </p>
         </div>
-        <div class="col-lg-6 text-center py-3">
-            <div>
-                <a href="{% url 'contact' %}" class="btn btn-primary btn-lg mb-4">Give Me A Shout</a>
+        <div class="col-lg-6 py-3">
+            <div class="text-center mb-4">
+                <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">Give Me A Shout</a>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-6">
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut, libero?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet laborum quis, saepe quam unde eius voluptates commodi totam qui voluptatibus, molestias suscipit cupiditate ratione a itaque sit rem odio?
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur optio eveniet nesciunt.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ut optio magnam sed enim doloremque odit nobis
-                veritatis inventore vero recusandae velit eaque laboriosam, consequuntur dolor aliquam minus nihil voluptate?
-            </p>
-        </div>
-        <div class="col-lg-6">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur optio eveniet nesciunt.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ut optio magnam sed enim doloremque odit nobis veritatis inventore vero recusandae velit eaque laboriosam, consequuntur dolor aliquam minus nihil voluptate?
-            </p>
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut, libero?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet laborum quis, saepe quam unde eius
-                voluptates commodi totam qui voluptatibus, molestias suscipit cupiditate ratione a itaque sit rem odio?
-            </p>
+            <div class="w-50 m-auto">
+                <img src="https://image.shutterstock.com/z/stock-vector-default-avatar-profile-icon-grey-photo-placeholder-518740741.jpg" alt="avatar image">
+            </div>
         </div>
     </div>
 </section>
 {% endblock content %}
 
 
-{% block js_file %}
+{% block foot_links %}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js"></script>
 <script type="text/javascript" src="{% static 'js/about.js' %}"></script>
-{% endblock js_file %}
+{% endblock foot_links %}

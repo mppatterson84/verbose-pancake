@@ -5,9 +5,10 @@ main{
     padding-top: 1em;
     padding-bottom: 1em;
 }
-main div h1{
-    border-bottom: 1px solid rgba(119, 136, 153, 0.5);
+main h1{
+    border-bottom: 2px solid rgba(119, 136, 153, 0.5);
     margin-bottom: 1em;
+    padding-bottom: .1em;
 }
 main img{
     width: 100%;
