@@ -1,9 +1,9 @@
 body{
-    background-color: rgba(135, 206, 250, 0.4);
+    background-color: rgb(235, 245, 255);
 }
 main{
-    background-color: rgb(235, 245, 255);
-    padding: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 main div h1{
     border-bottom: 1px solid rgba(119, 136, 153, 0.5);
@@ -15,7 +15,7 @@ main img{
     padding: 1em;
 }
 .post-entry{
-    border: 2px solid rgba(135, 206, 250, 0.3);
+    border: 2px solid rgba(174, 221, 250, 0.3);
     border-radius: 5px;
     clear: both;
     overflow: hidden;
@@ -28,3 +28,24 @@ section{
     padding: 1em;
     border-radius: 3px;
 }
+
+
+/* Extra small devices (phones, 576px and down) */
+@media only screen and (max-width: 576px) {
+    .container{
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 576px and up) */
+@media only screen and (min-width: 576px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
