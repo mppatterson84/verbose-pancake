@@ -1,29 +1,64 @@
 {% extends 'base.html' %}
+{% load static %}
+
+
+{% block css_file %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock css_file %}
 
 
 {% block content %}
 <section class="about-container">
     <h1>About</h1>
     <div class="row">
-        <div class="col-lg-6">
-            <p>Hi, my name is Mike.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Veniam quos, accusantium itaque assumenda nisi laboriosam. 
-                Voluptate earum deleniti perspiciatis magni illum numquam ullam veritatis impedit!
-            </p>
-            <p>You can find me on <a href="https://www.linkedin.com/in/mike-patterson-a2a5a68a/" target="_blank">Linkedin</a>.</p>
-            <p>Visit my <a href="https://github.com/mppatterson84" target="_blank">Github</a> profile.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                Explicabo similique impedit, odio excepturi est placeat obcaecati minus iure nobis, quam quis provident. 
-                Dolore nam quam sunt possimus doloremque pariatur tempore consectetur nemo! Autem, earum nemo.
+        <div class="col-lg-6 py-3">
+            <div class="btn-group mb-4" role="group" aria-label="Social Links">
+                <a class="btn btn-light border" href="https://www.linkedin.com/in/mike-patterson-a2a5a68a/" target="_blank" title="linkedin"><i class="fab fa-linkedin fa-2x"></i></a class="btn btn-light">
+                <a class="btn btn-light border" href="https://github.com/mppatterson84" target="_blank" title="github"><i class="fab fa-github fa-2x"></i></a>
+            </div>
+            <p>
+                Hello, World! My name is Mike. 
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Est a cumque voluptatibus! Fugit, dolorem vel?
             </p>
         </div>
-        <div class="col-lg-6 text-center p-3">
+        <div class="col-lg-6 text-center py-3">
             <div>
-                <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">Give Me A Shout</a>
+                <a href="{% url 'contact' %}" class="btn btn-primary btn-lg mb-4">Give Me A Shout</a>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut, libero?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet laborum quis, saepe quam unde eius voluptates commodi totam qui voluptatibus, molestias suscipit cupiditate ratione a itaque sit rem odio?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur optio eveniet nesciunt.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ut optio magnam sed enim doloremque odit nobis
+                veritatis inventore vero recusandae velit eaque laboriosam, consequuntur dolor aliquam minus nihil voluptate?
+            </p>
+        </div>
+        <div class="col-lg-6">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur optio eveniet nesciunt.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ut optio magnam sed enim doloremque odit nobis veritatis inventore vero recusandae velit eaque laboriosam, consequuntur dolor aliquam minus nihil voluptate?
+            </p>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut, libero?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet laborum quis, saepe quam unde eius
+                voluptates commodi totam qui voluptatibus, molestias suscipit cupiditate ratione a itaque sit rem odio?
+            </p>
         </div>
     </div>
 </section>
 {% endblock content %}
-    
+
+
+{% block js_file %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js"></script>
+<script type="text/javascript" src="{% static 'js/about.js' %}"></script>
+{% endblock js_file %}
