@@ -27,7 +27,8 @@ DEBUG = os.environ['DEBUG'] == 'True'
 
 ALLOWED_HOSTS = [
     os.environ['LOCAL_IP'], 
-    'localhost', '127.0.0.1', 
+    'localhost', 
+    '127.0.0.1', 
     'www.michael-patterson.com', 
 ]
 
