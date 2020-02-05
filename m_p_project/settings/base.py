@@ -25,7 +25,12 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ['DEBUG'] == 'True'
 
-ALLOWED_HOSTS = ['192.168.2.13', 'localhost', '127.0.0.1', 'www.michael-patterson.com', 'https://frozen-beach-38401.herokuapp.com/']
+ALLOWED_HOSTS = [
+    os.environ['LOCAL_IP'], 
+    'localhost', '127.0.0.1', 
+    'www.michael-patterson.com', 
+    'https://frozen-beach-38401.herokuapp.com/',
+]
 
 
 # Application definition
