@@ -2,9 +2,9 @@
 {% load static %}
 
 
-{% block css_file %}
+{% block head_links %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
-{% endblock css_file %}
+{% endblock head_links %}
 
 
 {% block navbar %}
@@ -27,8 +27,8 @@
 </div>
 <div class="home-container" id="more">
     <div>
-        <h3>Technologies I Enjoy</h3>
-        <p>Python and Django. HTML, CSS, and Javascript. PostgreSQL. Node.js and React.</p>
+        <h3>Technologies I Work With</h3>
+        <p>Python and Django. Django REST framework. HTML, CSS, and Javascript. PostgreSQL. Node.js and React. RESTful API's.</p>
         <a href="#even-more" class="btn btn-primary btn-lg m-3">Continue</a>
     </div>
 </div>
@@ -41,8 +41,8 @@
 </div>
 {% endblock content %}
 
-{% block js_file %}
+{% block foot_links %}
 <script type="text/javascript" src="{% static 'js/zenscroll-min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/home.js' %}"></script>
-{% endblock js_file %}
+{% endblock foot_links %}
     
