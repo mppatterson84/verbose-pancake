@@ -29,7 +29,6 @@ ALLOWED_HOSTS = [
     os.environ['LOCAL_IP'], 
     'localhost', '127.0.0.1', 
     'www.michael-patterson.com', 
-    'https://frozen-beach-38401.herokuapp.com/',
 ]
 
 
