@@ -2,6 +2,7 @@
 
 
 {% block content %}
+<section>
     <h1>Blog</h1>
     <a class="btn btn-primary" href="{% url 'post-list-all' %}">All Posts</a>
     <a class="btn btn-primary" href="{% url 'category-list' %}">Categories</a>    
@@ -18,5 +19,6 @@
                 <p>{{ post.body|truncatewords_html:50|safe }}</p>
             </div>
         {% endfor %}
+</section>
 {% endblock content %}
     

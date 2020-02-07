@@ -2,6 +2,7 @@
 
 
 {% block content %}
+<section>
     <h1>Blog Catagory: {{ title }}</h1>
     <a class="btn btn-primary" href="{% url 'blog' %}">Blog</a>
     <a class="btn btn-primary" href="{% url 'category-list' %}">Categories</a>
@@ -16,4 +17,5 @@
     {% empty %}
     <p class="mt-5">Filter returned no results.</p>
     {% endfor %}
+</section>
 {% endblock content %}

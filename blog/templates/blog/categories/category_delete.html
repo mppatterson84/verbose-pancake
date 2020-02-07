@@ -2,11 +2,13 @@
 
 
 {% block content %}
-<h1>Delete Category: {{ postcategory.category_name }}</h1>
-<p>pk: {{ postcategory.pk }}</p>
-<form action="" method="POST">{% csrf_token %}
-    <h4>Are you sure you want to delete "{{ postcategory.category_name }}"?</h4>
-    <input class="btn btn-danger" type="submit" value="Confirm" />
-    <a href="{% url 'category-list' %}" class="btn btn-warning">Cancel</a>
-</form>
+<section>
+    <h1>Delete Category: {{ postcategory.category_name }}</h1>
+    <p>pk: {{ postcategory.pk }}</p>
+    <form action="" method="POST">{% csrf_token %}
+        <h4>Are you sure you want to delete "{{ postcategory.category_name }}"?</h4>
+        <input class="btn btn-danger" type="submit" value="Confirm" />
+        <a href="{% url 'category-list' %}" class="btn btn-warning">Cancel</a>
+    </form>
+</section>
 {% endblock content %}

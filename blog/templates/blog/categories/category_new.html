@@ -2,9 +2,11 @@
 
 
 {% block content %}
-<h1>New Category</h1>
-<form action="" method="POST">{% csrf_token %}
-    {{ form.as_p }}
-    <input class="btn btn-success" type="submit" value="Save" />
-</form>
+<section>
+    <h1>New Category</h1>
+    <form action="" method="POST">{% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-success" type="submit" value="Save" />
+    </form>
+</section>
 {% endblock content %}

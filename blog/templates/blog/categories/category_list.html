@@ -2,6 +2,7 @@
 
 
 {% block content %}
+<section>
     <h1>Blog Categories</h1>
     <a class="btn btn-primary" href="{% url 'blog' %}">Blog</a>
     {% if user.is_authenticated %}
@@ -26,5 +27,5 @@
         {% endfor %}
 
     </form>
-    
+</section>
 {% endblock content %}

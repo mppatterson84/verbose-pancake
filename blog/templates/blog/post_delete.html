@@ -2,6 +2,7 @@
 
 
 {% block content %}
+<section>
     <h1>Delete Post: {{ post.title }}</h1>
     <p>{{ post.body|safe }}</p>
     <p>Author: {{ post.author }}</p>
@@ -13,4 +14,5 @@
         <input class="btn btn-danger" type="submit" value="Confirm" />
         <a href="{% url 'post-detail' post.pk post.slug %}" class="btn btn-warning">Cancel</a>
     </form>
+</section>
 {% endblock content %}
