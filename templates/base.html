@@ -69,12 +69,15 @@
                 <li class="nav-item {{ contact_active }}">
                     <a class="nav-link" href="{{ contact_active_link|default:'/contact/' }}">Contact {{ Contact_active_sr|safe }}</a>
                 </li>
+                <li class="nav-item {{ blog_active }}">
+                    <a class="nav-link" href="{{ blog_active_link|default:'/blog/' }}">Blog {{ Blog_active_sr|safe }}</a>
+                </li>
             </ul>
             <ul class="navbar-nav ml-auto text-center">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        Blog
+                        Blog Menu
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{% url 'blog' %}">Blog Home {{ blog_active_sr|safe }}</a>
