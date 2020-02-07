@@ -39,6 +39,11 @@ div.home-container div h3{
 div.home-container div ul{
     list-style-type: none;
 }
+.hamburger-inner::before,
+.hamburger-inner::after,
+.hamburger-inner{
+    background-color: rgb(226, 226, 226);
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {

@@ -35,7 +35,7 @@ section{
 .hamburger-inner::before,
 .hamburger-inner::after,
 .hamburger-inner{
-    background-color: rgb(212, 212, 212);
+    background-color: rgb(226, 226, 226);
 }
 
 /* Extra small devices (phones, 576px and down) */
