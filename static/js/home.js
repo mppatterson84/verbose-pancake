@@ -1,8 +1,8 @@
 console.log("Hello, World! home.js");
 
-const progress = document.querySelectorAll("div.home-container");
+const section = document.querySelectorAll("div.home-container");
 
-function pageValues() {
+function scrolled() {
     var cHeight = document.body.clientHeight;
     var wHeight = window.innerHeight;
     var scrollOffset = window.pageYOffset;
@@ -18,9 +18,9 @@ function pageValues() {
 }
 
 window.addEventListener("load", function () {
-    progress[0].style.backgroundPositionY = `-${pageValues().scrollPosition * 3}px`;
-    progress[1].style.backgroundPositionY = `${pageValues().scrollPosition * 3 - 200}px`;
-    progress[2].style.backgroundPositionY = `-${pageValues().scrollPosition * 3 - 150}px`;
+    section[0].style.backgroundPositionY = `-${scrolled().scrollPosition * 3}px`;
+    section[1].style.backgroundPositionY = `${scrolled().scrollPosition * 3 - 200}px`;
+    section[2].style.backgroundPositionY = `-${scrolled().scrollPosition * 3 - 150}px`;
 
     function scrollTo(hash) {
         location.hash = "#" + hash;
@@ -29,9 +29,9 @@ window.addEventListener("load", function () {
 });
 
 window.addEventListener("scroll", function () {
-    progress[0].style.backgroundPositionY = `-${pageValues().scrollPosition * 3}px`;
-    progress[1].style.backgroundPositionY = `${pageValues().scrollPosition * 3 - 200}px`;
-    progress[2].style.backgroundPositionY = `-${pageValues().scrollPosition * 3 - 150}px`;
+    section[0].style.backgroundPositionY = `-${scrolled().scrollPosition * 3}px`;
+    section[1].style.backgroundPositionY = `${scrolled().scrollPosition * 3 - 200}px`;
+    section[2].style.backgroundPositionY = `-${scrolled().scrollPosition * 3 - 150}px`;
 });
 
 // zenscroll settings
