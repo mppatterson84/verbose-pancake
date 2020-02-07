@@ -36,6 +36,9 @@ div.home-container div h3{
     border-radius: 15px;
     padding: .25em;
 }
+div.home-container div ul{
+    list-style-type: none;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
