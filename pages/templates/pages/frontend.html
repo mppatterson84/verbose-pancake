@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_links %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
+{% endblock head_links %}
+
+{% block content %}
+<section>
+    <h1>Frontend Prototypes</h1>
+    <div class="pb-3">
+        Back to <a href="{% url 'portfolio' %}">Portfolio</a>
+    </div>
+    <div class="portfolio-container">
+        <div>
+            <iframe src="https://mppatterson84.github.io/compass_slider" frameborder="0" height="667" width="375"></iframe>
+        </div>
+        <div>
+            <iframe src="https://mppatterson84.github.io/animated_background_gradient" frameborder="0" height="667" width="375"></iframe>
+        </div>
+        <div>
+            <iframe src="https://mppatterson84.github.io/scroll_progress" frameborder="0" height="667" width="375"></iframe>
+        </div>
+        <div>
+            <iframe src="https://mppatterson84.github.io/parallax" frameborder="0" height="667" width="375"></iframe>
+        </div>
+    </div>
+</section>
+{% endblock content %}
