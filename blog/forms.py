@@ -9,7 +9,8 @@ class PostForm(forms.ModelForm):
         widget=forms.TextInput(
             attrs={
                 "placeholder": "Post Title", 
-                "class": "form-control"
+                "class": "form-control",
+                "maxlength": "50"
             }
         )
     )
@@ -49,6 +50,7 @@ class PostCategoryForm(forms.ModelForm):
             attrs={
                 "placeholder": "Category Name",
                 "class": "form-control",
+                "maxlength": "50"
             }
         )
     )

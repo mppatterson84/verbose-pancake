@@ -4,7 +4,7 @@ from django.utils.text import slugify
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=70)
+    title = models.CharField(max_length=50)
     body = models.TextField()
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     created_at = models.DateTimeField(default=datetime.now, blank=False)
@@ -26,7 +26,7 @@ class Post(models.Model):
         return reverse('post-detail', kwargs={'pk': self.pk, 'slug': self.slug})
 
 class PostCategory(models.Model):
-    category_name = models.CharField(max_length=70, unique=True)
+    category_name = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(unique=False, blank=True, default='slug')
 
     def __str__(self):
