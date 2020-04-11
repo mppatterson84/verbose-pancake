@@ -1,7 +1,7 @@
-section div.portfolio-container{
+section div.portfolio-container > div{
     display: grid;
-    /* grid-template-columns: repeat(2, 1fr); */
-    gap: 2em;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1em 0;
     justify-items: center;
 }
 main iframe{
@@ -20,6 +20,14 @@ main iframe{
         height: 475px;
         padding: 1em;
     }
+    section div.portfolio-container > div{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 1em 0;
+    }
+    section div.portfolio-container > div > p{
+        grid-row: 1;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 576px and up) */
@@ -31,6 +39,14 @@ main iframe{
         width: 475px;
         height: 275px;
         padding: 1em;
+    }
+    section div.portfolio-container > div{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 1em 0;
+    }
+    section div.portfolio-container > div > p{
+        grid-row: 1;
     }
 }
 
@@ -47,7 +63,17 @@ main iframe{
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 992px) {
+    section div.portfolio-container > div{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1em 0;
+        justify-items: center;
+    }
+    section div.portfolio-container > div > p{
+        grid-row: initial;
+    }
+}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {}
