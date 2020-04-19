@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BASE_DIR = os.path.dirname(os.path.dirname(
+    os.path.dirname(os.path.abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,10 +27,10 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = os.environ['DEBUG'] == 'True'
 
 ALLOWED_HOSTS = [
-    os.environ['LOCAL_IP'], 
-    'localhost', 
-    '127.0.0.1', 
-    'www.michael-patterson.com', 
+    os.environ['LOCAL_IP'],
+    'localhost',
+    '127.0.0.1',
+    'www.michael-patterson.com',
 ]
 
 
@@ -132,6 +133,3 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-
-SITE_ID = 1

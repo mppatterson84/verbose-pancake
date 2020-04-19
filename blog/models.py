@@ -6,7 +6,8 @@ from django.utils.text import slugify
 class Post(models.Model):
     title = models.CharField(max_length=50)
     body = models.TextField()
-    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    author = models.ForeignKey(
+        'auth.User', default='auth.User', on_delete=models.CASCADE)
     created_at = models.DateTimeField(default=datetime.now, blank=False)
     updated_at = models.DateTimeField(default=datetime.now, blank=False)
     slug = models.SlugField(unique=False, blank=True, default='slug')
@@ -25,6 +26,7 @@ class Post(models.Model):
         from django.urls import reverse
         return reverse('post-detail', kwargs={'pk': self.pk, 'slug': self.slug})
 
+
 class PostCategory(models.Model):
     category_name = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(unique=False, blank=True, default='slug')
@@ -41,4 +43,4 @@ class PostCategory(models.Model):
 
     def get_absolute_url(self):
         from django.urls import reverse
-        return reverse('category-detail', kwargs={'slug': self.slug,})
+        return reverse('category-detail', kwargs={'slug': self.slug, })
