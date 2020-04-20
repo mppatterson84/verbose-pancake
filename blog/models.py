@@ -10,7 +10,7 @@ class Post(models.Model):
         'auth.User', default='auth.User', on_delete=models.CASCADE)
     created_at = models.DateTimeField(default=datetime.now, blank=False)
     updated_at = models.DateTimeField(default=datetime.now, blank=False)
-    slug = models.SlugField(unique=False, blank=True, default='slug')
+    slug = models.SlugField(blank=True)
     published = models.BooleanField(default=False)
     categories = models.ManyToManyField('blog.PostCategory')
 
@@ -19,12 +19,16 @@ class Post(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
+        from blog.models import Post
+        slugs = Post.objects.filter(slug__exact=self.slug)
+        if len(slugs) > 0:
+            self.slug = f"{self.slug}-{len(slugs)+1}"
         self.updated_at = datetime.now()
         super(Post, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
         from django.urls import reverse
-        return reverse('post-detail', kwargs={'pk': self.pk, 'slug': self.slug})
+        return reverse('post-detail', kwargs={'slug': self.slug})
 
 
 class PostCategory(models.Model):
