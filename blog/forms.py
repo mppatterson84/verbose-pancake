@@ -2,13 +2,14 @@ from django import forms
 from blog.models import Post, PostCategory
 from ckeditor.widgets import CKEditorWidget
 
+
 class PostForm(forms.ModelForm):
     title = forms.CharField(
-        label='', 
-        required=True, 
+        label='',
+        required=True,
         widget=forms.TextInput(
             attrs={
-                "placeholder": "Post Title", 
+                "placeholder": "Post Title",
                 "class": "form-control",
                 "maxlength": "50"
             }
@@ -30,9 +31,10 @@ class PostForm(forms.ModelForm):
     categories = forms.ModelMultipleChoiceField(
         widget=forms.CheckboxSelectMultiple,
         queryset=PostCategory.objects.all(),
-        required=False
+        required=False,
+        # initial=PostCategory.objects.all()[:1]
     )
-    
+
     class Meta:
         model = Post
         fields = [
@@ -41,6 +43,7 @@ class PostForm(forms.ModelForm):
             'published',
             'categories',
         ]
+
 
 class PostCategoryForm(forms.ModelForm):
     category_name = forms.CharField(
