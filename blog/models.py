@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import datetime
+from django.utils import timezone
 from django.utils.text import slugify
 
 
@@ -8,8 +8,8 @@ class Post(models.Model):
     body = models.TextField()
     author = models.ForeignKey(
         'auth.User', default='auth.User', on_delete=models.CASCADE)
-    created_at = models.DateTimeField(default=datetime.now, blank=False)
-    updated_at = models.DateTimeField(default=datetime.now, blank=False)
+    created_at = models.DateTimeField(default=timezone.now, blank=False)
+    updated_at = models.DateTimeField(default=timezone.now, blank=False)
     slug = models.SlugField(blank=True)
     published = models.BooleanField(default=False)
     categories = models.ManyToManyField('blog.PostCategory')
@@ -23,7 +23,7 @@ class Post(models.Model):
         slugs = Post.objects.filter(slug__exact=self.slug)
         if len(slugs) > 0:
             self.slug = f"{self.slug}-{len(slugs)+1}"
-        self.updated_at = datetime.now()
+        self.updated_at = timezone.now()
         super(Post, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
