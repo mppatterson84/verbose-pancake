@@ -33,7 +33,7 @@ class PostAdminForm(forms.ModelForm):
 
 class PostAdmin(admin.ModelAdmin):
     form = PostAdminForm
-    readonly_fields = ('updated_at', 'slug')
+    readonly_fields = ('created_at', 'updated_at', 'slug')
 
 
 class PostCategoryAdminForm(forms.ModelForm):
