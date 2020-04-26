@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.utils.text import slugify
+from blog.utils import get_unique_slug
 
 
 class Post(models.Model):
@@ -18,11 +19,7 @@ class Post(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
-        from blog.models import Post
-        slugs = Post.objects.filter(slug__exact=self.slug)
-        if len(slugs) > 0:
-            self.slug = f"{self.slug}-{len(slugs)+1}"
+        get_unique_slug(self)
         self.updated_at = timezone.now()
         super(Post, self).save(*args, **kwargs)
 
