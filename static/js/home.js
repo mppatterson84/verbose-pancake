@@ -9,12 +9,12 @@ function scrolled() {
     var onePercentOfHeight = (cHeight - wHeight) / 100;
     var scrollPosition = scrollOffset / onePercentOfHeight;
 
-    // return {
-    //     "scrollPosition": scrollPosition,
-    //     "cHeight": cHeight,
-    //     "wHeight": wHeight,
-    //     "scrollOffset": scrollOffset
-    // }
+    return {
+        scrollPosition: scrollPosition,
+        cHeight: cHeight,
+        wHeight: wHeight,
+        scrollOffset: scrollOffset,
+    };
 }
 
 window.addEventListener('load', function () {
@@ -28,10 +28,10 @@ window.addEventListener('load', function () {
         scrolled().scrollPosition * 3 - 150
     }px`;
 
-    function scrollTo(hash) {
-        location.hash = '#' + hash;
-    }
-    scrollTo('home');
+    // function scrollTo(hash) {
+    //     location.hash = '#' + hash;
+    // }
+    // scrollTo('home');
 });
 
 window.addEventListener('scroll', function () {
