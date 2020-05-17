@@ -1,11 +1,11 @@
-console.log("Hello, World! base.js");
+console.log('Hello, World! base.js');
 
-var hamburger = document.querySelector(".hamburger");
+var hamburger = document.querySelector('.hamburger');
 
-hamburger.addEventListener("click", function () {
-    hamburger.classList.toggle("is-active");
-    hamburger.classList.toggle("rubberBand");
-    hamburger.classList.toggle("jello");
+hamburger.addEventListener('click', function () {
+    hamburger.classList.toggle('is-active');
+    hamburger.classList.toggle('animate__rubberBand');
+    hamburger.classList.toggle('animate__jello');
     doubleClickDelay();
 });
 
@@ -14,7 +14,7 @@ hamburger.addEventListener("click", function () {
 function doubleClickDelay() {
     setTimeout(() => {
         hamburger.disabled = true;
-        hamburger.attributes
+        hamburger.attributes;
         setTimeout(() => {
             hamburger.disabled = false;
         }, 500);
