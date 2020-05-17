@@ -2,6 +2,7 @@ body{
     background-color: rgb(226, 240, 255);
 }
 main{
+    margin-top: 75px;
     padding-top: 1em;
     padding-bottom: 1em;
 }

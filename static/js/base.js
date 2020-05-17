@@ -20,3 +20,18 @@ function doubleClickDelay() {
         }, 500);
     }, 1);
 }
+
+// Hide the navbar when scrolling down.
+// Show the navbar when scrolling up.
+var a = window.pageYOffset; // 'a' is assigned an initial value
+$(document).scroll(() => {
+    var b = a; // 'b' is assigned the value of 'a' to hold
+    // console.log(`Old Number: ${b}`);
+    a = window.pageYOffset; // 'a' is assigned a new value
+    // console.log(`New Number: ${a}`);
+    var $nav = $('nav.navbar');
+    // show navbar if 'a' is less than 'b'
+    $nav.toggleClass('animate__slideInDown', a < b);
+    // hide the navbar if 'a' is greater than 'b'
+    $nav.toggleClass('animate__slideOutUp', a > b);
+});

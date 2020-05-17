@@ -21,6 +21,7 @@ div.home-container:nth-of-type(3){
 }
 div.home-container > div{
     margin: auto;
+    margin-top: 75px;
     padding: 1em;
     grid-row: 2;
     text-align: center;
