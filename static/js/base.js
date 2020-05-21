@@ -14,7 +14,6 @@ hamburger.addEventListener('click', function () {
 function doubleClickDelay() {
     setTimeout(() => {
         hamburger.disabled = true;
-        hamburger.attributes;
         setTimeout(() => {
             hamburger.disabled = false;
         }, 500);
@@ -24,14 +23,23 @@ function doubleClickDelay() {
 // Hide the navbar when scrolling down.
 // Show the navbar when scrolling up.
 var a = window.pageYOffset; // 'a' is assigned an initial value
+var $nav = $('nav.navbar');
 $(document).scroll(() => {
     var b = a; // 'b' is assigned the value of 'a' to hold
-    // console.log(`Old Number: ${b}`);
+    console.log(`Old Number: ${b}`);
     a = window.pageYOffset; // 'a' is assigned a new value
-    // console.log(`New Number: ${a}`);
-    var $nav = $('nav.navbar');
-    // show navbar if 'a' is less than 'b'
-    $nav.toggleClass('animate__slideInDown', a < b);
-    // hide the navbar if 'a' is greater than 'b'
-    $nav.toggleClass('animate__slideOutUp', a > b);
+    console.log(`New Number: ${a}`);
+
+    setTimeout(() => {
+        if (pageYOffset >= 10) {
+            // show navbar if 'a' is less than 'b'
+            $nav.toggleClass('animate__slideInDown', a <= b);
+            // hide the navbar if 'a' is greater than 'b'
+            $nav.toggleClass('animate__slideOutUp', a > b);
+        } else {
+            $nav.removeClass('animate__slideOutUp').removeClass(
+                'animate__slideInDown'
+            );
+        }
+    }, 500);
 });
