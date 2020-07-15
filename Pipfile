@@ -15,6 +15,7 @@ whitenoise = "*"
 django-ckeditor = "*"
 django-bleach = "*"
 bleach = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.7"
