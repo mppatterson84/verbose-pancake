@@ -4,26 +4,31 @@
 {% block head_links %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
 <link rel="stylesheet" href="{% static 'css/base.css' %}">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script type="text/javascript">
+    var enableBtn = () => {
+        document.querySelector('#submit-btn').disabled = false
+    }
+</script>
 {% endblock head_links %}
 
 {% block content %}
 <section class="email-container">
-    <h1>Contact</h1>    
+    <h1>Contact</h1>
     <div class="row">
+        <div class="col-lg-3"></div>
         <div class="col-lg-6">
-            <p class="pb-3">
-                <i class="far fa-envelope fa-2x"></i>
-            </p>
-        </div>
-        <div class="col-lg-6">
-            <form method="post">
+            <i class="far fa-envelope fa-2x"></i>
+            <form action="?" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
+                <div class="g-recaptcha" data-sitekey="{{ reCAPTCHA_site_key_v2 }}" data-callback="enableBtn"></div>
                 <div class="form-actions">
-                    <button class="btn btn-primary" type="submit">Send</button>
+                    <button class="btn btn-primary" id="submit-btn" type="submit" disabled>Send</button>
                 </div>
             </form>
         </div>
+        <div class="col-lg-3"></div>
     </div>
 </div>
 {% endblock content %}
