@@ -6,12 +6,8 @@
 <link rel="stylesheet" href="{% static 'css/base.css' %}">
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script type="text/javascript">
-    var enableBtn = () => {
-        document.querySelector('#submit-btn').disabled = false
-    }
-    var disableBtn = () => {
-        document.querySelector('#submit-btn').disabled = true
-    }
+    var enableBtn = () => document.querySelector('#submit-btn').disabled = false
+    var disableBtn = () => document.querySelector('#submit-btn').disabled = true
 </script>
 {% endblock head_links %}
 
@@ -22,7 +18,7 @@
         <div class="col-lg-3"></div>
         <div class="col-lg-6">
             <i class="far fa-envelope fa-2x"></i>
-            <form action="?" method="post">
+            <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <div class="g-recaptcha mb-1" data-sitekey="{{ reCAPTCHA_site_key_v2 }}" data-callback="enableBtn" data-expired-callback="disableBtn"></div>
