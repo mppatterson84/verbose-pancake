@@ -12,9 +12,11 @@ main h1 {
     padding-bottom: 0.1em;
 }
 img {
-    max-width: 100%;
+    max-width: 95%;
     height: auto;
-    padding: 1em;
+}
+figcaption {
+    text-align: center;
 }
 .post-entry {
     border: 2px solid rgba(174, 221, 250, 0.3);
@@ -45,14 +47,35 @@ section {
         padding-right: 0;
         padding-left: 0;
     }
+    img {
+        margin: auto;
+    }
+    img,
+    figure {
+        display: block;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 576px and up) */
 @media only screen and (min-width: 576px) {
+    img {
+        margin: auto;
+    }
+    img,
+    figure {
+        display: block;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+    img {
+        margin: 1em;
+    }
+    img,
+    figure {
+        display: inline;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

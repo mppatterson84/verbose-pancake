@@ -1,5 +1,3 @@
-console.log('Hello, World! base.js')
-
 var hamburger = document.querySelector('.hamburger')
 
 hamburger.addEventListener('click', function () {
@@ -43,3 +41,15 @@ $(document).scroll(() => {
         }
     }, 500)
 })
+
+// ckeditor
+// Change the inline style of an 'img'
+// when displayed on a small screen.
+var image = document.querySelector('img')
+var figure = document.querySelector('figure')
+window.onload = () => {
+    if (window.outerWidth < 768) {
+        image.style.float = 'none'
+        figure.style.float = 'none'
+    }
+}

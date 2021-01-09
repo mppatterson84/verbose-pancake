@@ -1,9 +1,14 @@
 from .base import *
+from .static import *
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_BASE_PATH = "ckeditor/ckeditor/"
 CKEDITOR_CONFIGS = {
     'default': {
+        'contentsCss': [
+            os.path.join(STATIC_URL, 'css/base.css'),
+            'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css'
+        ],
         'skin': 'moonocolor',
         'removePlugins': ['image'],
         'extraPlugins': ['codesnippet', 'autogrow', 'image2', 'uploadwidget', 'uploadimage'],
@@ -11,7 +16,6 @@ CKEDITOR_CONFIGS = {
         'autoGrow_onStartup': True,
         'autoGrow_minHeight': '300',
         'width': '100%',
-        'image2_alignClasses': ['align-left', 'align-center', 'align-right'],
         'image2_prefillDimensions': False,
         'toolbar': 'Custom',
         'toolbar_Custom': [
