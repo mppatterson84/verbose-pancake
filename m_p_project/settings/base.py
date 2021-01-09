@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     # 3rd Party
     'ckeditor',
+    'ckeditor_uploader',
     'django_bleach',
 
     # Local

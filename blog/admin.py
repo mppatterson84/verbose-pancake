@@ -2,13 +2,14 @@ from .models import Post, PostCategory
 from django import forms
 from django.contrib import admin
 from ckeditor.widgets import CKEditorWidget
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 
 class PostAdminForm(forms.ModelForm):
     body = forms.CharField(
         label='Post Body',
         required=True,
-        widget=CKEditorWidget()
+        widget=CKEditorUploadingWidget()
     )
 
     categories = forms.ModelMultipleChoiceField(
