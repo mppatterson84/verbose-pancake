@@ -1,15 +1,15 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 from .views import (
     HomePageView,
     AboutPageView,
-    PortfolioPageView,
-    FrontendPageView,
+    ProjectsPageView,
 )
 
 urlpatterns = [
     path('', HomePageView.as_view(), name='home'),
     path('about/', AboutPageView.as_view(), name='about'),
-    path('portfolio/', PortfolioPageView.as_view(), name='portfolio'),
-    path('portfolio/frontend-prototypes', FrontendPageView.as_view(), name='frontend'),
-]
+    path('projects/', ProjectsPageView.as_view(), name='projects'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

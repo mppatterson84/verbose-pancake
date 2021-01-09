@@ -22,24 +22,13 @@ class AboutPageView(TemplateView):
         context['about_active_sr'] = '<span class="sr-only">(current)</span>'
         return context
 
-class PortfolioPageView(TemplateView):
-    template_name = 'pages/portfolio.html'
+class ProjectsPageView(TemplateView):
+    template_name = 'pages/projects.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Portfolio'
-        context['portfolio_active'] = 'active'
-        context['portfolio_active_link'] = '#'
-        context['portfolio_active_sr'] = '<span class="sr-only">(current)</span>'
-        return context
-
-class FrontendPageView(TemplateView):
-    template_name = 'pages/frontend.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['title'] = 'Frontend Prototypes'
-        context['portfolio_active'] = 'active'
-        context['portfolio_active_link'] = '#'
-        context['portfolio_active_sr'] = '<span class="sr-only">(current)</span>'
+        context['title'] = 'Projects'
+        context['projects_active'] = 'active'
+        context['projects_active_link'] = '#'
+        context['projects_active_sr'] = '<span class="sr-only">(current)</span>'
         return context
