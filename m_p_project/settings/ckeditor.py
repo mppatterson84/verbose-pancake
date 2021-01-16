@@ -11,12 +11,13 @@ CKEDITOR_CONFIGS = {
         ],
         'skin': 'moonocolor',
         'removePlugins': ['image'],
-        'extraPlugins': ['codesnippet', 'autogrow', 'image2', 'uploadwidget', 'uploadimage'],
+        'extraPlugins': ['codesnippet', 'autogrow', 'image2'],
         'codeSnippet_theme': 'docco',
         'autoGrow_onStartup': True,
         'autoGrow_minHeight': '300',
         'width': '100%',
         'image2_prefillDimensions': False,
+        'filebrowserBrowseUrl': '/browser/',
         'toolbar': 'Custom',
         'toolbar_Custom': [
             ['Source'],
@@ -33,7 +34,7 @@ CKEDITOR_CONFIGS = {
             ['Styles', 'Format', 'Font', 'FontSize'],
             ['TextColor', 'BGColor'],
             ['Maximize', 'ShowBlocks'],
-            ['CodeSnippet', 'UploadWidget', 'UploadImage'],
+            ['CodeSnippet'],
         ],
     }
 }
