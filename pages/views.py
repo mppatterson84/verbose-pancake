@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView
 import os
+from pages.utils import get_cloudinary_timestamp, get_cloudinary_signature
 
 
 class HomePageView(TemplateView):
@@ -50,4 +51,6 @@ class BrowserPageView(TemplateView):
         context['cloud_name'] = os.environ.get('CLOUD_NAME')
         context['api_key'] = os.environ.get('API_KEY')
         context['user_name'] = os.environ.get('CLOUDINARY_USER')
+        context['signature'] = get_cloudinary_signature()
+        context['timestamp'] = get_cloudinary_timestamp()
         return context
