@@ -1,6 +1,6 @@
 var hamburger = document.querySelector('.hamburger')
 
-hamburger.addEventListener('click', function () {
+hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('is-active')
     hamburger.classList.toggle('animate__rubberBand')
     hamburger.classList.toggle('animate__jello')
@@ -18,28 +18,36 @@ function doubleClickDelay() {
     }, 1)
 }
 
-// Hide the navbar when scrolling down.
-// Show the navbar when scrolling up.
+// // Hide the navbar when scrolling down.
+// // Show the navbar when scrolling up.
 var a = window.pageYOffset // 'a' is assigned an initial value
-var $nav = $('nav.navbar')
-$(document).scroll(() => {
-    var b = a // 'b' is assigned the value of 'a' to hold
-    // console.log(`Old Number: ${b}`);
-    a = window.pageYOffset // 'a' is assigned a new value
-    // console.log(`New Number: ${a}`);
+var nav = document.querySelector('nav.navbar')
 
+// if the page reloads while scrolled
+if (window.pageYOffset >= 10) {
+    nav.classList.add('animate__slideInDown')
+}
+
+document.addEventListener('scroll', () => {
+    var b = a // 'b' is assigned the value of 'a' to hold
+    a = window.pageYOffset // 'a' is assigned a new value
     setTimeout(() => {
         if (pageYOffset >= 10) {
-            // show navbar if 'a' is less than 'b'
-            $nav.toggleClass('animate__slideInDown', a <= b)
-            // hide the navbar if 'a' is greater than 'b'
-            $nav.toggleClass('animate__slideOutUp', a > b)
+            if (a <= b) {
+                // show navbar when scrolling up
+                nav.classList.add('animate__slideInDown')
+                nav.classList.remove('animate__slideOutUp')
+            } else if (a > b) {
+                // hide the navbar when scrolling down
+                nav.classList.remove('animate__slideInDown')
+                nav.classList.add('animate__slideOutUp')
+            }
         } else {
-            $nav.removeClass('animate__slideOutUp').removeClass(
-                'animate__slideInDown'
-            )
+            // show the navbar when scrolled to the top
+            nav.classList.remove('animate__slideOutUp')
+            nav.classList.add('animate__slideInDown')
         }
-    }, 500)
+    }, 2000)
 })
 
 // ckeditor
