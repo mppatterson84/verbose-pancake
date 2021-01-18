@@ -51,13 +51,11 @@ document.addEventListener('scroll', () => {
 })
 
 // ckeditor
-// Change the inline style of an 'img'
+// Change the inline style of 'img' and 'figure' tags
 // when displayed on a small screen.
-var image = document.querySelector('img')
-var figure = document.querySelector('figure')
-window.onload = () => {
-    if (window.outerWidth < 768) {
-        image.style.float = 'none'
-        figure.style.float = 'none'
-    }
+if (window.outerWidth < 768) {
+    var elements = document.querySelectorAll('img, figure')
+    elements.forEach((e) => {
+        e.style.float = 'none'
+    })
 }
