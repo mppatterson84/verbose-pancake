@@ -6,21 +6,21 @@
     <title>Media Browser</title>
 </head>
 <body style="margin: 0;">
-  <script src="https://media-library.cloudinary.com/global/all.js"></script>
-
-  <!-- <button id="open-btn"></button> -->
+  
   <div class="ml-widget" style="height: 100vh;"></div>
-    
+  
+  <script src="https://media-library.cloudinary.com/global/all.js"></script>
   <script>
   window.ml = cloudinary.openMediaLibrary({
     cloud_name: '{{ cloud_name }}',
     api_key: '{{ api_key }}',
     username: '{{ user_name }}',
     timestamp: '{{ timestamp }}',
-    signature: '{{ signature }}',
-    inline_container: '.ml-widget',
+    // signature: '{{ signature }}', // signature has cross site cookie issues
     multiple: false,
     z_index: 1,
+    inline_container: '.ml-widget',
+    remove_header: true,
     }, {
         insertHandler: function (data) {
           data.assets.forEach(asset => {
