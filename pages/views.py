@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView
 import os
 from pages.utils import get_cloudinary_timestamp, get_cloudinary_signature
@@ -39,8 +40,9 @@ class ProjectsPageView(TemplateView):
         return context
 
 
-class BrowserPageView(TemplateView):
+class BrowserPageView(LoginRequiredMixin, TemplateView):
     template_name = 'pages/browser.html'
+    login_url = '/admin/'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
