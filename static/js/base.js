@@ -20,35 +20,35 @@ function doubleClickDelay() {
 
 // // Hide the navbar when scrolling down.
 // // Show the navbar when scrolling up.
-var a = window.pageYOffset // 'a' is assigned an initial value
-var nav = document.querySelector('nav.navbar')
+// var a = window.pageYOffset // 'a' is assigned an initial value
+// var nav = document.querySelector('nav.navbar')
 
-// if the page reloads while scrolled
-if (window.pageYOffset >= 10) {
-    nav.classList.add('animate__slideInDown')
-    nav.classList.remove('amimate__slideOutUp')
-}
+// // if the page reloads while scrolled
+// if (window.pageYOffset >= 10) {
+//     nav.classList.add('animate__slideInDown')
+//     nav.classList.remove('amimate__slideOutUp')
+// }
 
-document.addEventListener('scroll', () => {
-    var b = a // 'b' is assigned the value of 'a' to hold
-    a = window.pageYOffset // 'a' is assigned a new value
+// document.addEventListener('scroll', () => {
+//     var b = a // 'b' is assigned the value of 'a' to hold
+//     a = window.pageYOffset // 'a' is assigned a new value
 
-    if (pageYOffset >= nav.clientHeight) {
-        if (a <= b) {
-            // show navbar when scrolling up
-            nav.classList.add('animate__slideInDown')
-            nav.classList.remove('animate__slideOutUp')
-        } else if (a > b) {
-            // hide the navbar when scrolling down
-            nav.classList.remove('animate__slideInDown')
-            nav.classList.add('animate__slideOutUp')
-        }
-    } else {
-        // show the navbar when scrolled to the top
-        nav.classList.remove('animate__slideOutUp')
-        nav.classList.remove('animate__slideInDown')
-    }
-})
+//     if (pageYOffset >= nav.clientHeight) {
+//         if (a <= b) {
+//             // show navbar when scrolling up
+//             nav.classList.add('animate__slideInDown')
+//             nav.classList.remove('animate__slideOutUp')
+//         } else if (a > b) {
+//             // hide the navbar when scrolling down
+//             nav.classList.remove('animate__slideInDown')
+//             nav.classList.add('animate__slideOutUp')
+//         }
+//     } else {
+//         // show the navbar when scrolled to the top
+//         nav.classList.remove('animate__slideOutUp')
+//         nav.classList.remove('animate__slideInDown')
+//     }
+// })
 
 // ckeditor
 // Change the inline style of 'img' and 'figure' tags
